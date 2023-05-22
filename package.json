@@ -1,0 +1,28 @@
+{
+  "dependencies": {
+    "axios": "^1.4.0"
+  },
+  "name": "axios-weather-app",
+  "description": "This is weather update app",
+  "version": "1.0.0",
+  "source": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "parcel",
+    "build": "parcel build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/matin889/axios-weather-app.git"
+  },
+  "author": "Abdul Matin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/matin889/axios-weather-app/issues"
+  },
+  "homepage": "https://github.com/matin889/axios-weather-app#readme",
+  "devDependencies": {
+    "buffer": "^5.7.1",
+    "parcel": "^2.8.3"
+  }
+}
