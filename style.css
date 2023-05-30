@@ -3,11 +3,23 @@
   justify-content: center;
   align-items: flex-end;
 }
-.clock {
-  display: flex;
-  justify-content: center;
+#clock {
+  text-align: center;
 }
 
 .lat {
   font-size: 200px;
+}
+
+* {
+  color: white;
+  font-size: 36px;
+  text-shadow: 1px 1px white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  place-items: center;
+}
+li {
+  list-style: none;
 }

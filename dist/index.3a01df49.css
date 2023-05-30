@@ -4,13 +4,26 @@
   display: flex;
 }
 
-.clock {
-  justify-content: center;
-  display: flex;
+#clock {
+  text-align: center;
 }
 
 .lat {
   font-size: 200px;
+}
+
+* {
+  color: #fff;
+  text-shadow: 1px 1px #fff;
+  flex-direction: column;
+  justify-content: center;
+  place-items: center;
+  font-size: 36px;
+  display: flex;
+}
+
+li {
+  list-style: none;
 }
 
 /*# sourceMappingURL=index.3a01df49.css.map */

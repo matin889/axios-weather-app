@@ -4,18 +4,17 @@ const getLocation = () => {
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(getWeather);
     function getWeather(position) {
-      console.log(position.coords.latitude);
-      console.log(position.coords.longitude);
-      document.getElementById(
-        "lat"
-      ).innerHTML = `latitude: ${position.coords.latitude}`;
-      document.getElementById(
-        "lon"
-      ).innerHTML = `longitude: ${position.coords.longitude}`;
+      // console.log(position.coords.latitude);
+      // console.log(position.coords.longitude);
+      // document.getElementById(
+      //   "lat"
+      // ).innerHTML = `latitude: ${position.coords.latitude}`;
+      // document.getElementById(
+      //   "lon"
+      // ).innerHTML = `longitude: ${position.coords.longitude}`;
       const lat = document.getElementById("lat").value;
       const long = document.getElementById("lon").value;
       axios(
-        // `https://api.openweathermap.org/data/3.0/onecall?lat=${lat}&lon=${long}&appid=a12fa8ba1700f08e4754061a67fae535`
         `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&appid=a12fa8ba1700f08e4754061a67fae535&units=metric`
       )
         .then(function (data) {
@@ -26,10 +25,10 @@ const getLocation = () => {
           console.log(jsonData);
           document.getElementById(
             "city"
-          ).innerText = `your current location is ${jsonData.data.name}`;
+          ).innerText = `Current location: ${jsonData.data.name}`;
           document.getElementById(
             "temprature"
-          ).innerText = `your current temp is: ${jsonData.data.main.temp}`;
+          ).innerText = `Current temp: ${jsonData.data.main.temp}`;
         })
         .catch(function (error) {
           console.error(error);
@@ -57,7 +56,7 @@ const getBackgroundImage = () => {
       console.log(jsonData);
       document.getElementById(
         "creator"
-      ).innerText = `Image created by: ${jsonData.data.user.name}`;
+      ).innerText = `Photo credit: ${jsonData.data.user.name}`;
       document.body.style.backgroundImage = `url(${jsonData.data.urls.regular})`;
     })
     .catch(function (error) {
@@ -76,14 +75,14 @@ const getJoke = () => {
 
     .then(function (jsonData) {
       console.log(jsonData);
-      document.getElementById("setup").innerText = `${jsonData.data.setup}`;
+      // document.getElementById("setup").innerText = `${jsonData.data.setup}`;
       document.getElementById(
         "punchline"
       ).innerHTML = `${jsonData.data.punchline}`;
     })
     .catch(function (error) {
       console.error(error);
-      document.getElementById("setup").innerText = "can not get joke ";
+      // document.getElementById("setup").innerText = "can not get joke ";
       document.getElementById("punchline").innerHTML =
         "can not get punchline joke";
     });
@@ -119,19 +118,18 @@ setInterval(function timeCounter() {
   let month = d.getMonth() + 1;
   let year = d.getFullYear();
   let time =
-    "Time:" +
-    " " +
     h +
     ":" +
     m +
     ":" +
     s +
     " " +
-    "Date:" +
-    date +
-    "/" +
+    "\n" +
+    "\n" +
+    year +
+    "--" +
     month +
-    "/" +
-    year;
+    "--" +
+    date;
   document.getElementById("clock").innerText = time;
 }, 1000);
